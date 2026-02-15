@@ -1,0 +1,518 @@
+{
+  "users": [
+    {
+      "name": "John Doe",
+      "email": "[EMAIL_ADDRESS]",
+      "passwordHash": "$2b$10$1234567890123456789012345678901234567890123456789012345678901234",
+      "_id": "68f123456789012345678901",
+      "role": "user" ,
+      "createdAt": "2022-01-01T00:00:00.000Z",
+      "updatedAt": "2022-01-01T00:00:00.000Z"
+    }
+  ],
+  "subscriptions": [
+    {
+      "userId": "68f123456789012345678901",
+      "plan": "free",
+      "price": 0,
+      "status": "active",
+      "duration": "monthly",
+      "expiredAt": "2022-01-01T00:00:00.000Z",
+      "createdAt": "2022-01-01T00:00:00.000Z",
+      "updatedAt": "2022-01-01T00:00:00.000Z"
+    },
+    {
+      "userId": "68f123456789012345678902",
+      "plan": "basic",
+      "price": 10,
+      "status": "active",
+      "duration": "monthly",
+      "expiredAt": "2022-01-01T00:00:00.000Z",
+      "createdAt": "2022-01-01T00:00:00.000Z",
+      "updatedAt": "2022-01-01T00:00:00.000Z"
+    },
+    {
+      "userId": "68f123456789012345678903",
+      "plan": "premium",
+      "price": 100,
+      "status": "active",
+      "duration": "yearly",
+      "expiredAt": "2022-01-01T00:00:00.000Z",
+      "createdAt": "2022-01-01T00:00:00.000Z",
+      "updatedAt": "2022-01-01T00:00:00.000Z"
+    }
+  ],
+  "profiles": [
+    {
+      "userId": "68f123456789012345678901",
+      "name": "John Doe",
+      "type": "member",
+      "age": 30,
+      "weight": 80,
+      "height": 175,
+      "gender": "male",
+      "goal": "lose",
+      "weightGoal": 70,
+      "religion": "muslim",
+      "activityLevel": 1.5,
+      "allergies": ["none"],
+      "healthConditions": ["none"],
+      "foodPreferences": ["none"],
+      "dietaryRestrictions": ["none"],
+      "_id": "68f123456789012345678902",
+      "createdAt": "2022-01-01T00:00:00.000Z",
+      "updatedAt": "2022-01-01T00:00:00.000Z"
+    }
+  ],
+  "diets": [
+    {
+      "userId": "68f123456789012345678901",
+      "profileId": "68f123456789012345678902",
+      "dietType": "lose",
+      "calories": 2000,
+      "macros": {
+        "protein": 100,
+        "carbs": 200,
+        "fat": 66
+      },
+      "meals": [
+        {
+          "type": "breakfast",
+          "calories": 300,
+          "macros": {
+            "protein": 100,
+            "carbs": 200,
+            "fat": 66
+          },
+          "items": [
+            {
+              "id": "68f123456789012345678903",
+              "name": "Egg",
+              "amount": 4,
+              "serving": "piece",
+              "calories": 300,
+              "macros": {
+                "protein": 100,
+                "carbs": 200,
+                "fat": 66
+              }
+            },
+            {
+              "id": "68f123456789012345678903",
+              "name": "Rice",
+              "amount": 200,
+              "serving": "grams",
+              "calories": 300,
+              "macros": {
+                "protein": 100,
+                "carbs": 200,
+                "fat": 66
+              }
+            }
+          ]
+        },
+        {
+          "type": "lunch",
+          "calories": 300,
+          "macros": {
+            "protein": 100,
+            "carbs": 200,
+            "fat": 66
+          },
+          "items": [
+            {
+              "id": "68f123456789012345678903",
+              "name": "Egg",
+              "amount": 4,
+              "serving": "piece",
+              "calories": 300,
+              "macros": {
+                "protein": 100,
+                "carbs": 200,
+                "fat": 66
+              }
+            },
+            {
+              "id": "68f123456789012345678903",
+              "name": "Rice",
+              "amount": 200,
+              "serving": "grams",
+              "calories": 300,
+              "macros": {
+                "protein": 100,
+                "carbs": 200,
+                "fat": 66
+              }
+            }
+          ]
+        },
+        {
+          "type": "dinner",
+          "calories": 300,
+          "macros": {
+            "protein": 100,
+            "carbs": 200,
+            "fat": 66
+          },
+          "items": [
+            {
+              "id": "68f123456789012345678903",
+              "name": "Egg",
+              "amount": 4,
+              "serving": "piece",
+              "calories": 300,
+              "macros": {
+                "protein": 100,
+                "carbs": 200,
+                "fat": 66
+              }
+            },
+            {
+              "id": "68f123456789012345678903",
+              "name": "Rice",
+              "amount": 200,
+              "serving": "grams",
+              "calories": 300,
+              "macros": {
+                "protein": 100,
+                "carbs": 200,
+                "fat": 66
+              }
+            }
+          ]
+        }
+      ],
+      "_id": "68f123456789012345678904",
+      "createdAt": "2022-01-01T00:00:00.000Z",
+      "updatedAt": "2022-01-01T00:00:00.000Z"
+    }
+  ],
+  "trainPlans": [
+    {
+      "userId": "68f123456789012345678901",
+      "profileId": "68f123456789012345678902",
+      "trainDays": 4,
+      "restDays": 3,
+      "name": "Push Pull Legs",
+      "description": "",
+      "programmDays": [
+        {
+          "day": "Monday",
+          "focus": "Push",
+          "exercises": [
+            {
+              "video": "",
+              "name": "Push-ups",
+              "sets": 3,
+              "reps": 10,
+              "rest": 60
+            },
+            {
+              "video": "",
+              "name": "Squats",
+              "sets": 3,
+              "reps": 10,
+              "rest": 60
+            },
+            {
+              "video": "",
+              "name": "Lunges",
+              "sets": 3,
+              "reps": 10,
+              "rest": 60
+            },
+            {
+              "video": "",
+              "name": "Plank",
+              "sets": 3,
+              "reps": 10,
+              "rest": 60
+            }
+          ]
+        },
+        {
+          "day": "Tuesday",
+          "focus": "Pull",
+          "exercises": [
+            {
+              "video": "",
+              "name": "T-Bar Row",
+              "sets": 3,
+              "reps": 10,
+              "rest": 60
+            },
+            {
+              "video": "",
+              "name": "Lat Pull-Down",
+              "sets": 3,
+              "reps": 10,
+              "rest": 60
+            },
+            {
+              "video": "",
+              "name": "Seated Cable Row",
+              "sets": 3,
+              "reps": 10,
+              "rest": 60
+            },
+            {
+              "video": "",
+              "name": "Pull Over",  
+              "sets": 3,
+              "reps": 10,
+              "rest": 60
+            },
+            {
+              "video": "",
+              "name": "Bent Over Row",
+              "sets": 3,
+              "reps": 10,
+              "rest": 60
+            }
+          ]
+        },
+        {
+          "day": "Wednesday",
+          "focus": "Legs",
+          "exercises": [
+            {
+              "video": "",
+              "name": "Leg Press",
+              "sets": 3,
+              "reps": 10,
+              "rest": 60
+            },
+            {
+              "video": "",
+              "name": "Deadlifts",
+              "sets": 3,
+              "reps": 10,
+              "rest": 60
+            },
+            {
+              "video": "",
+              "name": "Calf Raises",
+              "sets": 3,
+              "reps": 10,
+              "rest": 60
+            }
+          ]
+        },
+        {
+          "day": "Thursday",
+          "focus": "Push",
+          "video": "",
+          "exercises": [
+            {
+              "video": "",
+              "name": "Bench Press",
+              "sets": 3,
+              "reps": 10,
+              "rest": 60
+            },
+            {
+              "video": "",
+              "name": "Incline Bench Press",
+              "sets": 3,
+              "reps": 10,
+              "rest": 60
+            },
+            {
+              "video": "",
+              "name": "Latral Raises",
+              "sets": 3,
+              "reps": 10,
+              "rest": 60
+            },
+            {
+              "video": "",
+              "name": "Latral Raises",
+              "sets": 3,
+              "reps": 10,
+              "rest": 60
+            },
+            {
+              "video": "",
+              "name": "Tricep Pushdowns",
+              "sets": 3,
+              "reps": 10,
+              "rest": 60
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "familyDietPlans": [
+    {
+      "userId": "68f123456789012345678901",
+      "profileId": "68f123456789012345678902",
+      "name": "Ahmed",
+      "plan":{
+        "calories": 2000,
+        "macros":{
+          "protein": 100,
+          "carbs": 200,
+          "fat": 66
+        },
+        "meals": [
+            {
+              "type": "breakfast",
+              "calories": 300,
+              "macros": {
+                "protein": 100,
+                "carbs": 200,
+                "fat": 66
+              },
+              "items": [
+                {
+                  "id": "68f123456789012345678903",
+                  "name": "Egg",
+                  "amount": 4,
+                  "serving": "piece",
+                  "calories": 300,
+                  "macros": {
+                    "protein": 100,
+                    "carbs": 200,
+                    "fat": 66
+                  }
+                },
+                {
+                  "id": "68f123456789012345678903",
+                  "name": "Rice",
+                  "amount": 200,
+                  "serving": "grams",
+                  "calories": 300,
+                  "macros": {
+                    "protein": 100,
+                    "carbs": 200,
+                    "fat": 66
+                  }
+                }
+              ]
+            },
+            {
+              "type": "lunch",
+              "calories": 300,
+              "macros": {
+                "protein": 100,
+                "carbs": 200,
+                "fat": 66
+              },
+              "items": [
+                {
+                  "id": "68f123456789012345678903",
+                  "name": "Egg",
+                  "amount": 4,
+                  "serving": "piece",
+                  "calories": 300,
+                  "macros": {
+                    "protein": 100,
+                    "carbs": 200,
+                    "fat": 66
+                  }
+                },
+                {
+                  "id": "68f123456789012345678903",
+                  "name": "Rice",
+                  "amount": 200,
+                  "serving": "grams",
+                  "calories": 300,
+                  "macros": {
+                    "protein": 100,
+                    "carbs": 200,
+                    "fat": 66
+                  }
+                }
+              ]
+            }
+          ]
+      }
+    },
+    {
+      "userId": "68f123456789012345678901",
+      "profileId": "68f123456789012345678902",
+      "name": "Mahmoud",
+      "plan":{
+        "calories": 3000,
+        "macros":{
+          "protein": 150,
+          "carbs": 250,
+          "fat": 100
+        },
+        "meals": [
+          {
+            "type": "breakfast",
+            "calories": 300,
+            "macros": {
+              "protein": 100,
+              "carbs": 200,
+              "fat": 66
+            },
+            "items": [
+              {
+                "id": "68f123456789012345678903",
+                "name": "Egg",
+                "amount": 4,
+                "serving": "piece",
+                "calories": 300,
+                "macros": {
+                  "protein": 100,
+                  "carbs": 200,
+                  "fat": 66
+                }
+              },
+              {
+                "id": "68f123456789012345678903",
+                "name": "Rice",
+                "amount": 200,
+                "serving": "grams",
+                "calories": 300,
+                "macros": {
+                  "protein": 100,
+                  "carbs": 200,
+                  "fat": 66
+                }
+              }
+            ]
+          },
+          {
+            "type": "lunch",
+            "calories": 300,
+            "macros": {
+              "protein": 100,
+              "carbs": 200,
+              "fat": 66
+            },
+            "items": [
+              {
+                "id": "68f123456789012345678903",
+                "name": "Egg",
+                "amount": 4,
+                "serving": "piece",
+                "calories": 300,
+                "macros": {
+                  "protein": 100,
+                  "carbs": 200,
+                  "fat": 66
+                }
+              },
+              {
+                "id": "68f123456789012345678903",
+                "name": "Rice",
+                "amount": 200,
+                "serving": "grams",
+                "calories": 300,
+                "macros": {
+                  "protein": 100,
+                  "carbs": 200,
+                  "fat": 66
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
