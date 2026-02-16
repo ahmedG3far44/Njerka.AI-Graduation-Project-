@@ -1,7 +1,12 @@
 import {Router} from "express";
+import { IMeal } from "../types/index";
+
 
 import generateDietPlan from "../ai/dietPlan";
 import getTrainingPlan from "../ai/trainingPlan";
+import generateRecipe from "../ai/recipes";
+
+
 
 
 const router = Router();
@@ -37,6 +42,26 @@ router.post('/training', async(req, res) => {
         };
 
         const dietPlan = await getTrainingPlan(userData);
+
+        res.status(200).json(dietPlan);
+    } catch (error) {
+     console.log(error);
+     res.status(500).json({error: 'Failed to generate diet plan'});
+        
+    }
+})
+
+router.post('/recipe', async(req, res) => {
+    try {
+        const payload = req.body;
+
+        // const {userGoal, trainDays, restDays, activityLevel} = payload;
+
+        const meal:IMeal = {
+            ...payload
+        };
+
+        const dietPlan = await generateRecipe(meal);
 
         res.status(200).json(dietPlan);
     } catch (error) {

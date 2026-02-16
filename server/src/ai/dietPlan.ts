@@ -1,20 +1,10 @@
+import { IProfileType } from "../types/index";
 import ai from "../config/ai";
 
 import {Type, FunctionCallingConfigMode} from '@google/genai';
 
 
-interface UserData {
-    age: number;
-    gender: "male" | "female";
-    weight: number;
-    tall: number;
-    goal: "lose" | "gain" | "balance";
-    goalWeight: number;
-    activityLevel: "sedentary" | "lightly" | "moderately" | "very" | "extremely";
-    allergies?: string[];
-    foodPreferences?: string[];
-    restrictions?: string[];
-}
+
 
 const generateDietPlanFunction = {
     name: 'generate_diet_plan',
@@ -117,13 +107,13 @@ const generateDietPlanFunction = {
 };
 
 
-async function generateDietPlan(userData : UserData) {
-    const prompt = `Generate a diet plan for a ${userData.age} year old ${userData.gender}, weight ${userData.weight}kg, height ${userData.tall}cm. 
-    Goal: ${userData.goal} to ${userData.goalWeight}kg. 
-    Activity: ${userData.activityLevel}. 
-    Allergies: ${userData.allergies.join(', ')}.
-    Preferences: ${userData.foodPreferences.join(', ')}.
-    Restrictions: ${userData.restrictions.join(', ')}.`;
+async function generateDietPlan(profile : IProfileType) {
+    const prompt = `Generate a diet plan for a ${profile.age} year old ${profile.gender}, weight ${profile.weight}kg, height ${profile.tall}cm. 
+    Goal: ${profile.goal} to ${profile.goalWeight}kg. 
+    Activity: ${profile.activityLevel}. 
+    Allergies: ${profile.allergies?.join(', ')}.
+    Preferences: ${profile.foodPreferences?.join(', ')}.
+    Restrictions: ${profile.restrictions?.join(', ')}.`;
 
     try {
         const response = await ai.models.generateContent({

@@ -1,5 +1,25 @@
 import {Request} from "express";
 
+export interface IMealType {
+    type: "breakfast" | "lunch" | "dinner" | "snack";
+}
+
+export interface IGender {
+    gender: "male" | "female";
+}
+
+export interface IServing {
+    unit: string | "piece" | "grams" | "ml";
+}
+
+export interface IDietGoal {
+    goal: "lose" | "gain" | "balance";
+}
+
+export interface IActivityLevel {
+    activityLevel: "sedentary" | "lightly" | "moderately" | "very" | "extremely";
+}
+
 
 export interface IUser {
     _id: string;
@@ -13,56 +33,48 @@ export interface AuthRequest extends Request {
     user?: IUser;
 }
 
-export interface UserData {
+export interface IProfileType{
     age: number;
-    gender: "male" | "female";
+    gender: IGender;
     weight: number;
     tall: number;
-    goal: "lose" | "gain" | "balance";
+    goal: IDietGoal;
     goalWeight: number;
-    activityLevel: "sedentary" | "lightly" | "moderately" | "very" | "extremely";
+    activityLevel: IActivityLevel;
     allergies?: string[];
     foodPreferences?: string[];
     restrictions?: string[];
 }
 
-export interface UserTrainingData {
-    trainDays: number;
-    userGoal: "lose" | "gain" | "balance";
-    activityLevel: "sedentary" | "lightly" | "moderately" | "very" | "extremely";
-}
+// Diet Plan Types:
 
-export interface UserDietData {
-    dietGoal: "lose" | "gain" | "balance";
+export interface IDietPlan {
+    dietGoal: IDietGoal;
     calories: number;
-    macros: {
-        protein: number;
-        carbs: number;
-        fat: number;
-    };
+    macros: IMealMacros;
     meals: {
-        type: string;
+        type: IMealType;
         calories: number;
-        macros: {
-            protein: number;
-            carbs: number;
-            fat: number;
-        };
-        items: {
-            name: string;
-            amount: number;
-            serving: string;
-            calories: number;
-            macros: {
-                protein: number;
-                carbs: number;
-                fat: number;
-            };
-        }[];
-    }[];
+        macros: IMealMacros;
+        items: IMealItem[];
+    }[]
 }
 
-export interface UserTrainingPlan {
+// Training Plan Types:
+export interface IGenerateTrainingData {
+    trainDays: number;
+    userGoal: IDietGoal;
+    activityLevel: IActivityLevel;
+}
+export interface IExercise {
+    video: string;
+    name: string;
+    sets: number;
+    reps: number;
+    rest: number;
+    weight: number;
+}
+export interface ITrainingPlan {
     name: string;
     description: string;
     trainDays: number;
@@ -70,13 +82,31 @@ export interface UserTrainingPlan {
     programmDays: {
         day: string;
         focus: string;
-        exercises: {
-            video: string;
-            name: string;
-            sets: number;
-            reps: number;
-            rest: number;
-        }[];
+        exercises: IExercise[];
     }[];
 }
 
+
+
+
+
+
+// Meal Types:
+export interface IMealMacros {
+    protein: number;
+    carbs: number;
+    fat: number;
+}
+export interface IMealItem {
+    name: string;
+    quantity: number;
+    unit: IServing;
+    calories: number;
+    macros: IMealMacros;
+}
+export interface IMeal {
+    type: string;
+    calories: number;
+    macros: IMealMacros;
+    items: IMealItem[];
+}
